@@ -1,0 +1,35 @@
+<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 74.36 106.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #aaa;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #595757;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(9.18 -5.11)">
+      <rect class="cls-1" x="1.81" y="76.58" width="16.58" height="31.28"/>
+    </clipPath>
+  </defs>
+  <circle class="cls-2" cx="44.9" cy="29.47" r="29.47"/>
+  <polygon class="cls-2" points="26.84 22.83 34.76 36.56 42.68 50.28 26.84 50.28 10.99 50.28 18.91 36.56 26.84 22.83"/>
+  <g class="cls-3">
+    <rect class="cls-4" x="10.99" y="71.47" width="16.58" height="31.28"/>
+    <rect class="cls-5" x="-11" y="84.94" width="37.81" height="6.28" transform="translate(-41.49 16.72) rotate(-36.35)"/>
+    <rect class="cls-5" x="-3.59" y="95.01" width="37.81" height="6.28" transform="translate(-46.02 23.07) rotate(-36.35)"/>
+  </g>
+</svg>

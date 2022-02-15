@@ -1,0 +1,20 @@
+<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 998.83 91.79">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f46658;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-1" width="998.83" height="91.79"/>
+    <rect class="cls-2" y="6.05" width="998.83" height="2.3"/>
+    <rect class="cls-2" y="17.53" width="998.83" height="2.6"/>
+    <rect class="cls-2" y="33.07" width="998.83" height="2.9"/>
+    <rect class="cls-2" y="57.47" width="998.83" height="3.71"/>
+  </g>
+</svg>
