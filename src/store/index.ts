@@ -5,6 +5,7 @@ import thunkMiddleware from "redux-thunk"
 /*reducer list*/
 //import basicReducer from "../reducers/basic/reducer"
 //import renameReducer from "../reducers/rename/reducer"
+import MainReducer from "../reducers/main/reducer"
 import HibmanReducer from "../reducers/hibman/reducer"
 
 /*
@@ -17,6 +18,7 @@ const store: Store<ArticleState, ArticleAction> & {
 const rootReducer = combineReducers({
     //"basic": basicReducer,
     //"rename": renameReducer,
+    "MainReducer": MainReducer,
     "HibmanReducer": HibmanReducer,
 })
 //const loggerMiddleware = createLogger()

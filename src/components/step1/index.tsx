@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
 import { StoreType } from "../../store";
+import { AppDispatch } from "../../store";
+import { MAIN_STEP_NEXT } from "../../reducers/actionsTypes"
 
 import Level from "./level"
 import Chart from "./chart"
@@ -8,6 +10,8 @@ import Runner from "./runner"
 
 export default () => {
     const hibmanData = useSelector((state: StoreType) => state.HibmanReducer.hibMan)
+    
+    const dispatch = useDispatch<AppDispatch>()
 
     const [mainType, setMainType] = useState<string>("")
     const [regDate, setRegDate] = useState<string>("")
@@ -18,7 +22,7 @@ export default () => {
     const [prefA, setPrefA] = useState<number>(0)
     const [prefB, setPrefB] = useState<number>(0)
 
-    const [step, setStep] = useState<number>(0)
+    //const [step, setStep] = useState<number>(0)
 
     useEffect(() => {
         if (hibmanData.uid != null) {
@@ -75,6 +79,8 @@ export default () => {
                     </div>
                     <div style={{ display: "flex", justifyContent: "center", margin: 15 }}>
                         <button
+                            className="btn btn-primary"
+                            /*
                             style={{
                                 border: "none",
                                 color: "#fff",
@@ -82,7 +88,7 @@ export default () => {
                                 padding: "5px 30px",
                                 borderRadius: 30
                             }}
-
+                            */
                             onClick={() => {
                                 let ct = 0;
                                 for (let i = 0; i < 5; i++) {
@@ -93,13 +99,20 @@ export default () => {
                                         ct++
                                     }
                                 }
-
-                                console.log(jobTitle)
-                                console.log(pref)
-                                console.log(ct)
+                                /*
+                                    console.log(jobTitle)
+                                    console.log(pref)
+                                    console.log(ct)
+                                */
                                 if (jobTitle == "經理" && pref >= 500000 && ct == 5) {
                                     alert("!")
                                 }
+
+
+                                dispatch({
+                                    type: MAIN_STEP_NEXT,
+                                    step: 2
+                                })
                             }}
                         >下一步</button>
                     </div>
