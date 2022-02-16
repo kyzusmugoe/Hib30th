@@ -11,13 +11,9 @@ import Step2 from "./components/step2";
 import Step3 from "./components/step3";
 import Quene from "./components/quene";
 
-
-
 const App = () => {
 
     const ws = useContext(WebServiceContext)
-
-
     const mainStep = useSelector((state: StoreType) => state.MainReducer.step)
     const dispatch = useDispatch<AppDispatch>()
     //const [step, setStep] = useState<number>(0)
@@ -39,7 +35,10 @@ const App = () => {
                 })
             })
         */
-
+        dispatch({
+            type: MAIN_STEP_NEXT,
+            step: 3
+        })
         ws.webservice.getEvent30Data().then((hibMan: HibManData | undefined) => {
 
             //console.log(hibMan)
@@ -75,20 +74,27 @@ const App = () => {
     )
 
     return (
-        <div style={{ backgroundColor: "#fff", padding: 20, borderRadius: 5, minHeight: 500, display: "flex", justifyContent: "center", alignItems: "center" }}>
-
-            {
-                mainStep == 1 ?
-                    <Step1 /> :
+        <div style={{ backgroundColor: "#fff", padding: 20, borderRadius: 5, minHeight: 500, display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <div>
+                <img src="./images/event30/title.svg" width={600} />
+            </div>
+            <div style={{alignSelf: "flex-start", borderBottom:"1px solid #999", width:"100%", marginBottom:20}}>
+                <h1>STEP 1 申請資格</h1>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {
+                    mainStep == 1 ?
+                        <Step1 /> :
                     mainStep == 2 ?
                         <Quene /> :
-                        mainStep == 3 ?
-                            <Step2 /> :
-                            mainStep == 4 ?
-                                <Step3 /> :
-                                <Loading />
-            }
+                    mainStep == 3 ?
+                        <Step2 /> :
+                    mainStep == 4 ?
+                        <Step3 /> :
+                        <Loading />
+                }
 
+            </div>
         </div>
 
     )
